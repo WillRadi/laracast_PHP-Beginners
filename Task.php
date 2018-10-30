@@ -7,18 +7,18 @@ class Task
     public $completed;
 
 
-    public function complete()
-    {
-        $this->completed = true;
-    }
+    // public function complete()
+    // {
+    //     $this->completed = true;
+    // }
 
-    public function isComplete()
-    {
-        return $this->completed;
-    }
+    // public function isComplete()
+    // {
+    //     return $this->completed;
+    // }
 
-    public function getDescription()
-    {
-        return $this->description;
-    }
+    // public function getDescription()
+    // {
+    //     return $this->description;
+    // }
 }
