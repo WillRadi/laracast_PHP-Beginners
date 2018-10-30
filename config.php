@@ -7,7 +7,7 @@ return $config = [
         'user'      => 'will',
         'pass'      => '123',
         'options'   => [
-            PDO::ATTR_MODE => PDO::ERRMODE_EXCEPTION
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
         ]
     ]
 ];
