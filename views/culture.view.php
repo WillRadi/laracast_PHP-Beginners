@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>PHP Todos</title>
-</head>
-<body>
+<?php require "parcials/header.php" ?>
     Our Culture
-</body>
-</html>
+<?php require "parcials/footer.php" ?>

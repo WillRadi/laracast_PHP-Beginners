@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>PHP Todos</title>
-</head>
-<body>
+<?php require "parcials/header.php" ?>
     <br>
     ToDo List: <br>
     <ul>
@@ -18,6 +12,4 @@
             </li>
         <?php endforeach; ?>
     </ul>
-
-</body>
-</html>
+<?php require "parcials/footer.php" ?>
