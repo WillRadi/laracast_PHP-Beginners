@@ -4,6 +4,23 @@ class Router
 {
     protected $routes = [];
 
+    public static function load($file)
+    {
+        /**
+         * Assim como era no index, será feito o require do arquivo que usa uma variável $router
+         * Então, esta é instanciada antes da requisição do arquivo
+         */
+        $router = new self;
+
+
+        /**
+         * Espera uma variável $router, que é uma instância da classe Router
+         */
+        require $file;
+
+        return $router;
+    }
+
     public function define($routes)
     {
         $this->routes = $routes;
