@@ -27,3 +27,5 @@ $query = require "core/bootstrap.php";
    * (que, efetivamente, DIRECIONA o usuário para outra página)
    */
   require $router->direct($uri);
+
+  echo "lala";
