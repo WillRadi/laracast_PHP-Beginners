@@ -7,7 +7,7 @@
 /**
  * Mudança de um array p várias chamadas de método:
  */
-$router->get('', 'controllers/indexController.php');
-$router->get('contact', 'controllers/contactController.php');
-$router->get('culture', 'controllers/cultureController.php');
-$router->post('name', 'controllers/add-name.php');
+$router->get('',        'PageController@home');
+$router->get('contact', 'PageController@contact');
+$router->get('culture', 'PageController@culture');
+$router->post('name',   'PageController@addName');

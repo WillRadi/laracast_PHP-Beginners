@@ -1,3 +1,3 @@
 <?php require "parcials/header.php" ?>
-    Our Culture
+    Our <?= $nacionality; ?> culture
 <?php require "parcials/footer.php" ?>

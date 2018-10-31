@@ -47,11 +47,30 @@ class Router
      */
     public function direct($uri, $method)
     {
-        /**
-         * Verifica se a URL digitada existe
-         */
+        // modelo que está retornando: PageController@contact
         if(array_key_exists($uri, $this->routes[$method])){
-            return $this->routes[$method][$uri];
+
+            /**
+             * Como o callAction n sespera um array, usa-se o ... no return.
+             * Ele converte em string se houver uma no array
+             */
+            return $this->callAction(
+                ...explode('@', $this->routes[$method][$uri])
+            );
         }
+    }
+
+    protected function callAction($controller, $action)
+    {
+        /**
+         * Lembrando q o que está vindo na $controller é uma string que corresponde ao nome da classe do PageCotroller
+         */
+        $controller = new $controller;
+
+        if (!method_exists($controller, $action)) {
+            throw new Exception("{$controller} não tem a o método");
+        }
+
+        return $controller->$action();
     }
 }
