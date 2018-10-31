@@ -1,4 +1,6 @@
 {
+    "name":"PHP_Beginner",
+    "description":"Learning necessary PHP before to learn Laravel",
     "autoload":{
         "classmap":[
             "./"

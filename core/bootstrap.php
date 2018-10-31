@@ -1,17 +1,20 @@
 <?php
 
 /**
- * boostrap.php já não faz mais sentido em ser uma instância do QB
- * Então, são feitas as alterações $app[]
+ * Container:
+ * pegue coisas, jogue dentro de uma caixa e dê a ela um label.
+ * Neste exemplo:
+ * coisas = require 'config.php'
+ * label da caixa = config
  */
-
-$app = [];
-$app['config'] = require "config.php";
 
 /**
- * make() faz a requisição do arquivo config.php
- * Antes era uma variável que fazia a requisiçãço de um array, agora é uma chave do array $app,
- * que retorna a requisição de um array
+ * "pegue o conteúdo do arquivo config.php e armazene ele em um container e armazene ele na chave 'config'"
  */
+App::bind('config', require 'config.php');
 
-$app['database'] = new QueryBuilder(Connection::make($app['config']['database']));
+/**
+ * o array [database] não tem nada a ver com o label do container
+ * App::get('config') - pega o conteúdo de dentro da caixa
+ */
+App::bind('database', new QueryBuilder(Connection::make(App::get('config')['database'])));

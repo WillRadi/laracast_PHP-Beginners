@@ -6,7 +6,7 @@
  * A instância do banco/QueryBuilder é $app[database]
  */
 
-$tasks = $app['database']->fetchAll('todos');
-$names = $app['database']->fetchAll('users');
+$tasks = App::get('database')->fetchAll('todos');
+$names = App::get('database')->fetchAll('users');
 
 require "views/index.view.php";
