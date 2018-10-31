@@ -2,6 +2,13 @@
 
 // app chrome p mostrar o dump bonito: var_masterpiece
 
+/**
+ * Autoload carrega todas as classes declaradas
+ * Criar composer.json, executar composer install
+ * Fazer o require do autoload
+ */
+require "vendor/autoload.php";
+
 require "core/bootstrap.php";
 
 /**

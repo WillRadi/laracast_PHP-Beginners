@@ -6,15 +6,6 @@
  */
 
 $app = [];
-
-require "core/database/QueryBuilder.php";
-
-require "core/database/Connection.php";
-
-require "core/Router.php";
-
-require "core/Request.php";
-
 $app['config'] = require "config.php";
 
 /**
