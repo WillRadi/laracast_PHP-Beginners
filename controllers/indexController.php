@@ -7,5 +7,6 @@
  */
 
 $tasks = $app['database']->fetchAll('todos');
+$names = $app['database']->fetchAll('users');
 
 require "views/index.view.php";

@@ -12,6 +12,15 @@
             </li>
         <?php endforeach; ?>
     </ul>
+    <br><br>
+    System users:
+    <ul>
+        <?php foreach($names as $name) : ?>
+            <li>
+                <?= $name->name ?>
+            </li>
+        <?php endforeach; ?>
+    </ul>
 
     <h1>Submit your name</h1>
 
