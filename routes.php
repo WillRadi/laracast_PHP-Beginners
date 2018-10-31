@@ -4,12 +4,10 @@
  * Em vez de trabalhar com arrays, é interessante que o Route seja uma classe.
  */
 
-
 /**
- * Mètodo que DEFINE pra qual controller a rota acessada encaminhará o usuário.
+ * Mudança de um array p várias chamadas de método:
  */
-$router->define([
-    ''          => 'controllers/indexController.php',
-    'contact'   => 'controllers/contactController.php',
-    'culture'   => 'controllers/cultureController.php'
-]);
+$router->get('', 'controllers/indexController.php');
+$router->get('contact', 'controllers/contactController.php');
+$router->get('culture', 'controllers/cultureController.php');
+$router->post('name', 'controllers/add-name.php');

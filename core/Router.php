@@ -2,7 +2,10 @@
 
 class Router
 {
-    protected $routes = [];
+    public $routes = [
+        'GET' => [],
+        'POST' => []
+    ];
 
     public static function load($file)
     {
@@ -21,9 +24,20 @@ class Router
         return $router;
     }
 
-    public function define($routes)
+    /**
+     * método que CRIA uma nova rota get
+     */
+    public function get($uri, $controller)
     {
-        $this->routes = $routes;
+        /**
+         * Na chave que uri, adicione o valor controller
+         */
+        $this->routes['GET'][$uri] = $controller;
+    }
+
+    public function post($uri, $controller)
+    {
+        $this->routes['POST'][$uri] = $controller;
     }
 
     /**
@@ -31,13 +45,13 @@ class Router
      * assim, o index.php está fazendo a requição do que retorna desse método
      * (o valor da chave que corresponde a URL acessada no navegador)
      */
-    public function direct($uri)
+    public function direct($uri, $method)
     {
         /**
          * Verifica se a URL digitada existe
          */
-        if(array_key_exists($uri, $this->routes)){
-            return $this->routes[$uri];
+        if(array_key_exists($uri, $this->routes[$method])){
+            return $this->routes[$method][$uri];
         }
     }
 }

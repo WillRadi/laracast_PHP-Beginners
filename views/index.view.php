@@ -12,4 +12,13 @@
             </li>
         <?php endforeach; ?>
     </ul>
+
+    <h1>Submit your name</h1>
+
+    <form method="POST" action="/name">
+
+        <input type="text" name="name">
+
+        <button type="submit">Enviar</button>
+    </form>
 <?php require "parcials/footer.php" ?>
