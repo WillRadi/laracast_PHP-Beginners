@@ -1,5 +1,7 @@
 <?php
 
+use Proj\Core\App;
+
 /**
  * Container:
  * pegue coisas, jogue dentro de uma caixa e dê a ela um label.
@@ -28,7 +30,7 @@ function view($name, $data = [])
      */
     extract($data);
     
-    return require "views/{$name}.view.php";
+    return require "Proj/views/{$name}.view.php";
 }
 
 function redirect($path)

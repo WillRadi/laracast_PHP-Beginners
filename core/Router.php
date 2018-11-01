@@ -1,5 +1,7 @@
 <?php
 
+use Proj\Controllers\PageController;
+
 class Router
 {
     public $routes = [
@@ -62,9 +64,12 @@ class Router
     protected function callAction($controller, $action)
     {
         /**
-         * Lembrando q o que está vindo na $controller é uma string que corresponde ao nome da classe do PageCotroller
+         * Com o uso do namespace, não da pra colocar diretamente o nome do controller.
+         * usa-se as duas barras para dizer ao php que não é ára escapar as barras
          */
-        $controller = new $controller;
+        $controllerPath = "Proj\\Controllers\\{$controller}";
+
+        $controller = new $controllerPath;
 
         if (!method_exists($controller, $action)) {
             throw new Exception("{$controller} não tem a o método");

@@ -1,5 +1,7 @@
 <?php
 
+namespace Proj\Core;
+
 /**
  * Lembrar do composer dump-autoload
  */

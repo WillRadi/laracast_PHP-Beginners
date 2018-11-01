@@ -17,5 +17,5 @@ require "core/bootstrap.php";
  * Nota: Router e request já vêm do bootstrap.php, possibilitando acesso aos métodos estáticos load e uri
  * 
  */
-Router::load('routes.php')
+Router::load('Proj/routes.php')
     ->direct(Request::uri(), Request::method());
