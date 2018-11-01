@@ -49,7 +49,6 @@ class Router
     {
         // modelo que está retornando: PageController@contact
         if(array_key_exists($uri, $this->routes[$method])){
-
             /**
              * Como o callAction n sespera um array, usa-se o ... no return.
              * Ele converte em string se houver uma no array

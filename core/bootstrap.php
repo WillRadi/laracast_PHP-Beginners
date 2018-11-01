@@ -19,7 +19,7 @@ App::bind('config', require 'config.php');
  */
 App::bind('database', new QueryBuilder(Connection::make(App::get('config')['database'])));
 
-function view($name, $data = null)
+function view($name, $data = [])
 {
     /**
      * função extract cria uma variável com o mesmo nome que veio no array e atribui o valor do array à essa variável
@@ -29,4 +29,9 @@ function view($name, $data = null)
     extract($data);
     
     return require "views/{$name}.view.php";
+}
+
+function redirect($path)
+{
+    header("Location: /{$path}");
 }

@@ -10,4 +10,6 @@
 $router->get('',        'PageController@home');
 $router->get('contact', 'PageController@contact');
 $router->get('culture', 'PageController@culture');
-$router->post('name',   'PageController@addName');
+
+$router->get('users', 'UsersController@index');
+$router->post('users', 'UsersController@store');
