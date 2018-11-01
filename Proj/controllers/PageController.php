@@ -10,10 +10,6 @@ class PageController
     {
         $tasks = App::get('database')->fetchAll('todos');
 
-        /**
-         * limpando o require "views/index.view.php";
-         * array deve ser passado para que o index "veja" a variável
-         */
         return view('index', ['tasks' => $tasks]);
     }
 

@@ -10,9 +10,6 @@ class UsersController
     {
         $names = App::get('database')->fetchAll('users');
 
-        /**
-         * compact('names') == ['names' => $names]
-         */
         return view('users', compact('names'));
     }
 
